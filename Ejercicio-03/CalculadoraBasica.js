@@ -40,7 +40,7 @@ class Calculadora {
     }
 
     mrc() {
-        this.pantalla = this.memoria;
+        this.pantalla = this.memoria.toString();
         document.getElementById("pantalla").value = this.pantalla;
     }
 
