@@ -71,7 +71,7 @@ class Calculadora {
 
     igual() {
         try {
-            this.pantalla = eval(this.pantalla);
+            this.pantalla = eval(this.pantalla).toString();
         }
         catch(err) {
             this.pantalla = "Error = " + err;
