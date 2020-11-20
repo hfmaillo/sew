@@ -33,7 +33,7 @@ article {
 #pila {
       color: rgb(84, 84, 84);
       background-color: rgba(239, 239, 239, 0.3);
-      font: 400 0.83333em Arial;
+      font: 400 0.83333em Arial, sans-serif;
       height: 6em;
       border: 0.125em inset rgba(118, 118, 118, 0.3);
       text-align: right;
