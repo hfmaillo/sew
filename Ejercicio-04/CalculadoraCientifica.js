@@ -40,7 +40,7 @@ class CalculadoraBasica {
     }
 
     mrc() {
-        this.pantalla = this.memoria;
+        this.pantalla = this.memoria.toString();
         document.getElementById("pantalla").value = this.pantalla;
     }
 
@@ -71,7 +71,7 @@ class CalculadoraBasica {
 
     igual() {
         try {
-            this.pantalla = eval(this.pantalla);
+            this.pantalla = eval(this.pantalla).toString();
         }
         catch(err) {
             this.pantalla = "Error = " + err;
@@ -83,62 +83,77 @@ class CalculadoraBasica {
 class CalculadoraCientifica extends CalculadoraBasica {
 
     pi() {
-        this.pantalla += Math.PI;
-        document.getElementById("pantalla").value = this.pantalla;
-    }
-
-    seno() {
-        this.pantalla += Math.PI;
-        document.getElementById("pantalla").value = this.pantalla;
-    }
-
-    coseno() {
-        this.pantalla += Math.PI;
-        document.getElementById("pantalla").value = this.pantalla;
-    }
-
-    tangente() {
-        this.pantalla += Math.PI;
-        document.getElementById("pantalla").value = this.pantalla;
-    }
-
-    arcoSeno() {
-        this.pantalla += Math.PI;
-        document.getElementById("pantalla").value = this.pantalla;
-    }
-
-    arcoCoseno() {
-        this.pantalla += Math.PI;
-        document.getElementById("pantalla").value = this.pantalla;
-    }
-
-    arcoTangente() {
-        this.pantalla += Math.PI;
+        this.pantalla += "Math.PI";
         document.getElementById("pantalla").value = this.pantalla;
     }
 
     e() {
-        this.pantalla += Math.PI;
+        this.pantalla += "Math.E";
         document.getElementById("pantalla").value = this.pantalla;
     }
 
-    log() {
-        this.pantalla += Math.PI;
+    seno() {
+        this.pantalla += "Math.sin(";
         document.getElementById("pantalla").value = this.pantalla;
     }
 
-    exp() {
-        this.pantalla += Math.PI;
+    coseno() {
+        this.pantalla += "Math.cos(";
         document.getElementById("pantalla").value = this.pantalla;
     }
 
-    pow() {
-        this.pantalla += Math.PI;
+    tangente() {
+        this.pantalla += "Math.tan(";
         document.getElementById("pantalla").value = this.pantalla;
     }
 
-    random() {
-        this.pantalla += Math.PI;
+    pIzquierdo() {
+        this.pantalla += "(";
+        document.getElementById("pantalla").value = this.pantalla;
+    }
+
+    pDerecho() {
+        this.pantalla += ")";
+        document.getElementById("pantalla").value = this.pantalla;
+    }
+
+    arcoseno() {
+        this.pantalla += "Math.asin(";
+        document.getElementById("pantalla").value = this.pantalla;
+    }
+
+    arcocoseno() {
+        this.pantalla += "Math.acos(";
+        document.getElementById("pantalla").value = this.pantalla;
+    }
+
+    arcotangente() {
+        this.pantalla += "Math.atan(";
+        document.getElementById("pantalla").value = this.pantalla;
+    }
+
+    raiz() {
+        this.pantalla += "Math.sqrt(";
+        document.getElementById("pantalla").value = this.pantalla;
+    }
+
+    potencia() {
+        this.pantalla += "Math.pow(";
+        document.getElementById("pantalla").value = this.pantalla;
+    }
+
+    logaritmo() {
+        this.pantalla += "Math.log10(";
+        document.getElementById("pantalla").value = this.pantalla;
+    }
+
+    lNatural() {
+        this.pantalla += "Math.log(";
+        document.getElementById("pantalla").value = this.pantalla;
+    }
+
+    coma() {
+        this.pantalla += ",";
         document.getElementById("pantalla").value = this.pantalla;
     }
 
