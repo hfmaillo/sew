@@ -46,21 +46,17 @@ class CalculadoraBasica {
 
     mMenos() {
         this.igual();
-        try {
-            this.memoria -= parseFloat(this.pantalla);
-        }
-        catch(err) {
-            this.memoria -= 0.0;
+        var valor = parseFloat(this.pantalla);
+        if (!isNaN(valor)) {
+            this.memoria -= valor;
         }
     }
 
     mMas() {
         this.igual();
-        try {
-            this.memoria += parseFloat(this.pantalla);
-        }
-        catch(err) {
-            this.memoria += 0.0;
+        var valor = parseFloat(this.pantalla);
+        if (!isNaN(valor)) {
+            this.memoria += valor;
         }
     }
 

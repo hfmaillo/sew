@@ -46,21 +46,17 @@ class Calculadora {
 
     mMenos() {
         this.igual();
-        try {
-            this.memoria -= parseFloat(this.pantalla);
-        }
-        catch(err) {
-            this.memoria -= 0.0;
+        var valor = parseFloat(this.pantalla);
+        if (!isNaN(valor)) {
+            this.memoria -= valor;
         }
     }
 
     mMas() {
         this.igual();
-        try {
-            this.memoria += parseFloat(this.pantalla);
-        }
-        catch(err) {
-            this.memoria += 0.0;
+        var valor = parseFloat(this.pantalla);
+        if (!isNaN(valor)) {
+            this.memoria += valor;
         }
     }
 
@@ -73,7 +69,7 @@ class Calculadora {
         try {
             this.pantalla = eval(this.pantalla).toString();
         }
-        catch(err) {
+        catch (err) {
             this.pantalla = "Error = " + err;
         }
         document.getElementById("pantalla").value = this.pantalla;
