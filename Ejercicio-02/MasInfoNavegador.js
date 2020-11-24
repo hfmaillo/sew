@@ -1,7 +1,6 @@
 // MasInfoNavegador.js
-// Informacion de navegador
 // Version 1.0. 03/11/2020. Hector Fernandez Maillo. Universidad de Oviedo
-document.getElementsByTagName("p")[0].innerHTML = "Versión: ";
+document.write("Versión: ");
 document.write(navegador.version);
 document.write("</p>");
 document.write("<p>Plataforma: ");
