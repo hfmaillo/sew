@@ -9,39 +9,42 @@ class Calculadora {
         this.memoria = 0.0;
     }
 
-    digitos(digito) {
-        this.pantalla += digito;
+    appendPantalla(toAppend) {
+        this.pantalla += toAppend;
         document.getElementById("pantalla").value = this.pantalla;
+    }
+
+    digitos(digito) {
+        this.appendPantalla(digito);
     }
 
     punto() {
-        this.pantalla += ".";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla(".");
     }
 
     suma() {
-        this.pantalla += "+";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla("+");
     }
 
     resta() {
-        this.pantalla += "-";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla("-");
     }
 
     multiplicacion() {
-        this.pantalla += "*";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla("*");
     }
 
     division() {
-        this.pantalla += "/";
+        this.appendPantalla("/");
+    }
+
+    writePantalla(toWrite) {
+        this.pantalla = toWrite;
         document.getElementById("pantalla").value = this.pantalla;
     }
 
     mrc() {
-        this.pantalla = this.memoria.toString();
-        document.getElementById("pantalla").value = this.pantalla;
+        this.writePantalla(this.memoria.toString());
     }
 
     mMenos() {
@@ -61,8 +64,7 @@ class Calculadora {
     }
 
     borrar() {
-        this.pantalla = "";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.writePantalla("");
     }
 
     igual() {
