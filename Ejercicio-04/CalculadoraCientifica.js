@@ -9,39 +9,42 @@ class CalculadoraBasica {
         this.memoria = 0.0;
     }
 
-    digitos(digito) {
-        this.pantalla += digito;
+    appendPantalla(toAppend) {
+        this.pantalla += toAppend;
         document.getElementById("pantalla").value = this.pantalla;
+    }
+
+    digitos(digito) {
+        this.appendPantalla(digito);
     }
 
     punto() {
-        this.pantalla += ".";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla(".");
     }
 
     suma() {
-        this.pantalla += "+";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla("+");
     }
 
     resta() {
-        this.pantalla += "-";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla("-");
     }
 
     multiplicacion() {
-        this.pantalla += "*";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla("*");
     }
 
     division() {
-        this.pantalla += "/";
+        this.appendPantalla("/");
+    }
+
+    writePantalla(toWrite) {
+        this.pantalla = toWrite;
         document.getElementById("pantalla").value = this.pantalla;
     }
 
     mrc() {
-        this.pantalla = this.memoria.toString();
-        document.getElementById("pantalla").value = this.pantalla;
+        this.writePantalla(this.memoria.toString());
     }
 
     mMenos() {
@@ -61,15 +64,14 @@ class CalculadoraBasica {
     }
 
     borrar() {
-        this.pantalla = "";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.writePantalla("");
     }
 
     igual() {
         try {
             this.pantalla = eval(this.pantalla).toString();
         }
-        catch(err) {
+        catch (err) {
             this.pantalla = "Error = " + err;
         }
         document.getElementById("pantalla").value = this.pantalla;
@@ -79,78 +81,63 @@ class CalculadoraBasica {
 class CalculadoraCientifica extends CalculadoraBasica {
 
     pi() {
-        this.pantalla += "Math.PI";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla("Math.PI");
     }
 
     e() {
-        this.pantalla += "Math.E";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla("Math.E");
     }
 
     seno() {
-        this.pantalla += "Math.sin(";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla("Math.sin(");
     }
 
     coseno() {
-        this.pantalla += "Math.cos(";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla("Math.cos(");
     }
 
     tangente() {
-        this.pantalla += "Math.tan(";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla("Math.tan(");
     }
 
     pIzquierdo() {
-        this.pantalla += "(";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla("(");
     }
 
     pDerecho() {
-        this.pantalla += ")";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla(")");
     }
 
     arcoseno() {
-        this.pantalla += "Math.asin(";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla("Math.asin(");
     }
 
     arcocoseno() {
-        this.pantalla += "Math.acos(";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla("Math.acos(");
     }
 
     arcotangente() {
-        this.pantalla += "Math.atan(";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla("Math.atan(");
     }
 
     raiz() {
-        this.pantalla += "Math.sqrt(";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla("Math.sqrt(");
     }
 
     potencia() {
-        this.pantalla += "Math.pow(";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla("Math.pow(");
     }
 
     logaritmo() {
-        this.pantalla += "Math.log10(";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla("Math.log10(");
     }
 
     lNatural() {
-        this.pantalla += "Math.log(";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla("Math.log(");
     }
 
     coma() {
-        this.pantalla += ",";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla(",");
     }
 
 }
