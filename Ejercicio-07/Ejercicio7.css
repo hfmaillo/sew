@@ -38,17 +38,6 @@ h1 + p {
   }
 
 /* a=0 b=0 c=1 -> Especificidad =   1 */
-footer {
-      margin-top: 2em;
-  }
-
-/* a=0 b=1 c=1 -> Especificidad =  11 */
-img[alt~="Válido!"] {
-      height: 3.6em;
-      width: 3.6em;
-  }
-
-/* a=0 b=0 c=1 -> Especificidad =   1 */
 /* a=0 b=0 c=1 -> Especificidad =   1 */
 /* a=0 b=0 c=1 -> Especificidad =   1 */
 table, th, td {
@@ -69,4 +58,15 @@ th {
 tr:nth-child(odd) {
       background-color: #A7270B;
       color: white;
+  }
+
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+footer {
+      margin-top: 2em;
+  }
+
+/* a=0 b=1 c=1 -> Especificidad =  11 */
+img[alt~="Válido!"] {
+      height: 3.6em;
+      width: 3.6em;
   }

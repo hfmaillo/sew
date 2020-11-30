@@ -4,9 +4,6 @@
 "use strict";
 class Pelicula { 
 
-    constructor () { 
-    }
-
     ocultar() {
         $(":header").hide();
         $("p").hide();
