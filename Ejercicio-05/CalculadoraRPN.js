@@ -13,16 +13,20 @@ class PilaLIFO {
     }
 
     desapilar() {
-        return (this.pila.pop());
+        return this.pila.pop();
     }
 
     longitud() {
-        return (this.pila.length);
+        return this.pila.length;
     }
 
     mostrar() {
         var stringPila = "<h3 hidden>Pila</h3>" + "<ol>";
-        for (var i = this.longitud() - 1; i >= 0; i--) stringPila += "<li>" + this.pila[i] + "</li>";
+        
+        for (var i = this.longitud() - 1; i >= 0; i--) {
+            stringPila += "<li>" + this.pila[i] + "</li>";
+        }
+
         stringPila += "</ol>";
         return stringPila;
     }
@@ -35,54 +39,52 @@ class CalculadoraRPN {
         this.pila = new PilaLIFO();
     }
 
-    digitos(digito) {
-        this.pantalla += digito;
+    appendPantalla(toAppend) {
+        this.pantalla += toAppend;
         document.getElementById("pantalla").value = this.pantalla;
+    }
+
+    digitos(digito) {
+        this.appendPantalla(digito);
     }
 
     punto() {
-        this.pantalla += ".";
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla(".");
+    }
+
+    operacion(operador) {
+        var numOperandos = operador.length;
+
+        if (this.pila.longitud() >= numOperandos) {
+            var operacion;
+            if (numOperandos == 1) {
+                var v = this.pila.desapilar();
+                operacion = operador(v);
+            } else { // numOperandos == 2
+                var v2 = this.pila.desapilar();
+                var v1 = this.pila.desapilar();
+                operacion = operador(v1, v2);
+            }
+
+            this.pila.apilar(operacion);
+            document.getElementById("pila").innerHTML = this.pila.mostrar();
+        }
     }
 
     suma() {
-        if (this.pila.longitud() >= 2) {
-            var v2 = this.pila.desapilar();
-            var v1 = this.pila.desapilar();
-            var suma = v1 + v2;
-            this.pila.apilar(suma);
-            document.getElementById("pila").innerHTML = this.pila.mostrar();
-        }
+        this.operacion((v1, v2) => v1 + v2);
     }
 
     resta() {
-        if (this.pila.longitud() >= 2) {
-            var v2 = this.pila.desapilar();
-            var v1 = this.pila.desapilar();
-            var resta = v1 - v2;
-            this.pila.apilar(resta);
-            document.getElementById("pila").innerHTML = this.pila.mostrar();
-        }
+        this.operacion((v1, v2) => v1 - v2);
     }
 
     multiplicacion() {
-        if (this.pila.longitud() >= 2) {
-            var v2 = this.pila.desapilar();
-            var v1 = this.pila.desapilar();
-            var multiplicacion = v1 * v2;
-            this.pila.apilar(multiplicacion);
-            document.getElementById("pila").innerHTML = this.pila.mostrar();
-        }
+        this.operacion((v1, v2) => v1 * v2);
     }
 
     division() {
-        if (this.pila.longitud() >= 2) {
-            var v2 = this.pila.desapilar();
-            var v1 = this.pila.desapilar();
-            var division = v1 / v2;
-            this.pila.apilar(division);
-            document.getElementById("pila").innerHTML = this.pila.mostrar();
-        }
+        this.operacion((v1, v2) => v1 / v2);
     }
 
     borrar() {
@@ -100,111 +102,57 @@ class CalculadoraRPN {
     }
     
     pi() {
-        this.pantalla += Math.PI;
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla(Math.PI);
     }
 
     e() {
-        this.pantalla += Math.E;
-        document.getElementById("pantalla").value = this.pantalla;
+        this.appendPantalla(Math.E);
     }
 
     seno() {
-        if (this.pila.longitud() >= 1) {
-            var valor = this.pila.desapilar();
-            var seno = Math.sin(valor);
-            this.pila.apilar(seno);
-            document.getElementById("pila").innerHTML = this.pila.mostrar();
-        }
+        this.operacion(Math.sin);
     }
 
     coseno() {
-        if (this.pila.longitud() >= 1) {
-            var valor = this.pila.desapilar();
-            var coseno = Math.cos(valor);
-            this.pila.apilar(coseno);
-            document.getElementById("pila").innerHTML = this.pila.mostrar();
-        }
+        this.operacion(Math.cos);
     }
 
     tangente() {
-        if (this.pila.longitud() >= 1) {
-            var valor = this.pila.desapilar();
-            var tangente = Math.tan(valor);
-            this.pila.apilar(tangente);
-            document.getElementById("pila").innerHTML = this.pila.mostrar();
-        }
+        this.operacion(Math.tan);
     }
 
     arcoseno() {
-        if (this.pila.longitud() >= 1) {
-            var valor = this.pila.desapilar();
-            var arcoseno = Math.asin(valor);
-            this.pila.apilar(arcoseno);
-            document.getElementById("pila").innerHTML = this.pila.mostrar();
-        }
+        this.operacion(Math.asin);
     }
 
     arcocoseno() {
-        if (this.pila.longitud() >= 1) {
-            var valor = this.pila.desapilar();
-            var arcocoseno = Math.acos(valor);
-            this.pila.apilar(arcocoseno);
-            document.getElementById("pila").innerHTML = this.pila.mostrar();
-        }
+        this.operacion(Math.acos);
     }
 
     arcotangente() {
-        if (this.pila.longitud() >= 1) {
-            var valor = this.pila.desapilar();
-            var arcotangente = Math.atan(valor);
-            this.pila.apilar(arcotangente);
-            document.getElementById("pila").innerHTML = this.pila.mostrar();
-        }
+        this.operacion(Math.atan);
     }
 
     raiz() {
-        if (this.pila.longitud() >= 1) {
-            var valor = this.pila.desapilar();
-            var raiz = Math.sqrt(valor);
-            this.pila.apilar(raiz);
-            document.getElementById("pila").innerHTML = this.pila.mostrar();
-        }
+        this.operacion(Math.sqrt);
     }
 
     potencia() {
-        if (this.pila.longitud() >= 2) {
-            var v2 = this.pila.desapilar();
-            var v1 = this.pila.desapilar();
-            var potencia = Math.pow(v1, v2);
-            this.pila.apilar(potencia);
-            document.getElementById("pila").innerHTML = this.pila.mostrar();
-        }
+        this.operacion(Math.pow);
     }
 
     logaritmo() {
-        if (this.pila.longitud() >= 1) {
-            var valor = this.pila.desapilar();
-            var logaritmo = Math.log10(valor);
-            this.pila.apilar(logaritmo);
-            document.getElementById("pila").innerHTML = this.pila.mostrar();
-        }
+        this.operacion(Math.log10);
     }
 
     lNatural() {
-        if (this.pila.longitud() >= 1) {
-            var valor = this.pila.desapilar();
-            var lNatural = Math.log(valor);
-            this.pila.apilar(lNatural);
-            document.getElementById("pila").innerHTML = this.pila.mostrar();
-        }
+        this.operacion(Math.log);
     }
 
     masMenos() {
         if (this.pantalla.substring(0, 1) != "-") {
             this.pantalla = "-" + this.pantalla;
-        }
-        else {
+        } else {
             this.pantalla = this.pantalla.substring(1);
         }
         document.getElementById("pantalla").value = this.pantalla;

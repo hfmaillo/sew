@@ -53,6 +53,12 @@ article {
       grid-column-end: 6;
   }
 
+/* a=0 b=1 c=1 -> Especificidad =  11 */
+input[onclick*="digitos"] {
+      background-color: #7c7c7c;
+      color: white;
+  }
+
 /* a=0 b=0 c=1 -> Especificidad =   1 */
 p {
       color: darkslategray;
