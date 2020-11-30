@@ -23,7 +23,7 @@ h1 {
 /* a=0 b=0 c=1 -> Especificidad =   1 */
 article {
       display: grid;
-      grid-template-columns: auto auto auto auto auto;
+      grid-template-columns: auto auto auto auto auto auto;
       grid-gap: 0.7em;
       margin: auto;
       width: 30%;
@@ -50,7 +50,13 @@ article {
 /* a=0 b=1 c=1 -> Especificidad =  11 */
 #pila, input[type="text"] {
       grid-column-start: 1;
-      grid-column-end: 6;
+      grid-column-end: 7;
+  }
+
+/* a=0 b=1 c=1 -> Especificidad =  11 */
+input[onclick*="digitos"] {
+      background-color: #7c7c7c;
+      color: white;
   }
 
 /* a=0 b=0 c=1 -> Especificidad =   1 */
