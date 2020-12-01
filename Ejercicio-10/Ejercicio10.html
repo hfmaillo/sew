@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cambio de moneda</title>
+    <link rel="stylesheet" href="Ejercicio10.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="Ejercicio10.js"></script>
+</head>
+
+<body onload="moneda.cargarCambio()">
+    <!-- Ejercicio 10. Versión 1.0. 17/11/2020. Héctor Fernández Maillo. Universidad de Oviedo -->
+    <header>
+        <h1>Cambio de moneda</h1>
+        <p>Seleccione una moneda, introduzca un valor y ¡le mostraremos su conversión a otras 5 monedas!</p>
+    </header>
+
+    <article>
+        <h2 hidden>Cambio de moneda</h2>
+
+        <section>
+            <h3 hidden>Euro</h3>
+            <input type="radio" name="moneda" onclick="moneda.seleccionar('USDEUR')" checked />EUR: 
+            <input type="text" title="Euro" id="USDEUR" />
+        </section>
+
+        <section>
+            <h3 hidden>Dólar estadounidense</h3>
+            <input type="radio" name="moneda" onclick="moneda.seleccionar('USDUSD')" />USD: 
+            <input type="text" title="Dólar estadounidense" id="USDUSD" disabled />
+        </section>
+
+        <section>
+            <h3 hidden>Yen japonés</h3>
+            <input type="radio" name="moneda" onclick="moneda.seleccionar('USDJPY')" />JPY: 
+            <input type="text" title="Yen japonés" id="USDJPY" disabled />
+        </section>
+
+        <section>
+            <h3 hidden>Libra esterlina</h3>
+            <input type="radio" name="moneda" onclick="moneda.seleccionar('USDGBP')" />GBP: 
+            <input type="text" title="Libra esterlina" id="USDGBP" disabled />
+        </section>
+
+        <section>
+            <h3 hidden>Dólar australiano</h3>
+            <input type="radio" name="moneda" onclick="moneda.seleccionar('USDAUD')" />AUD: 
+            <input type="text" title="Dólar australiano" id="USDAUD" disabled />
+        </section>
+
+        <section>
+            <h3 hidden>Franco suizo</h3>
+            <input type="radio" name="moneda" onclick="moneda.seleccionar('USDCHF')" />CHF: 
+            <input type="text" title="Franco suizo" id="USDCHF" disabled />
+        </section>
+
+        <section>
+            <h3 hidden>Convertir</h3>
+            <input type="button" value="Convertir" onclick="moneda.convertir()" />
+        </section>
+    </article>
+
+    <footer>
+        <a href="https://validator.w3.org/check/referer"><img src="https://clouddayscom.files.wordpress.com/2020/06/html5_badge.png" alt="¡HTML5 Válido!" /></a>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="https://kevloi.github.io/portfolio/static/media/CSS.f6eb4946.png" alt="¡CSS Válido!" /></a>
+        <p>Copyright @2020 Héctor Fernández</p>
+    </footer>
+</body>
+
+</html>
