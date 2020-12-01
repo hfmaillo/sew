@@ -1,11 +1,11 @@
-// Ejercicio11-1.js
-// Ejercicio 11-1
+// Ejercicio11-2.js
+// Ejercicio 11-2
 // Version 1.0. 17/11/2020. Hector Fernandez Maillo. Universidad de Oviedo
 "use strict";
 class GeoLocalizacion { 
 
     constructor () {
-        navigator.geolocation.getCurrentPosition(this.getPosicion.bind(this));
+        navigator.geolocation.getCurrentPosition(this.getPosicion.bind(this), this.verErrores.bind(this));
     }
 
     getPosicion(posicion) {
@@ -16,6 +16,23 @@ class GeoLocalizacion {
         this.precisionAltitud = posicion.coords.altitudeAccuracy;
         this.rumbo            = posicion.coords.heading;
         this.velocidad        = posicion.coords.speed;       
+    }
+
+    verErrores(error) {
+        switch(error.code) {
+            case error.PERMISSION_DENIED:
+                this.mensaje = "El usuario no permite la petición de geolocalización";
+                break;
+            case error.POSITION_UNAVAILABLE:
+                this.mensaje = "Información de geolocalización no disponible";
+                break;
+            case error.TIMEOUT:
+                this.mensaje = "La petición de geolocalización ha caducado";
+                break;
+            case error.UNKNOWN_ERROR:
+                this.mensaje = "Se ha producido un error desconocido";
+                break;
+        }
     }
 
     getLongitud() {
