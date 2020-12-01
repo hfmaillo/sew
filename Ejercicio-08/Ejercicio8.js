@@ -26,8 +26,6 @@ class Meteo {
             url: this.url,
             method: 'GET',
             success: function(datos) {
-                //Presentación de los datos contenidos en JSON
-                
                 var stringIcono = "<img src='https://openweathermap.org/img/w/" + datos.weather[0].icon + ".png' alt='" + datos.weather[0].description + "' />";
                 var stringDatos = "<ul><li>País: " + datos.sys.country + "</li>";
                     stringDatos += "<li>Latitud: " + datos.coord.lat + " grados</li>";
