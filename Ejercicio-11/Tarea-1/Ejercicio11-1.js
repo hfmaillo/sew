@@ -30,8 +30,9 @@ class GeoLocalizacion {
         return this.altitud;
     }
 
-    verTodo(dondeVerlo) {
-        var ubicacion = document.getElementById(dondeVerlo);
+    verTodo(dondeVerlo) {        
+        $("input[type='button']").remove();
+        var ubicacion = $("#" + dondeVerlo);
         var datos = '<ul>'; 
         datos += '<li>Longitud: '+this.longitud +' grados</li>'; 
         datos += '<li>Latitud: '+this.latitud +' grados</li>';
@@ -41,7 +42,7 @@ class GeoLocalizacion {
         datos += '<li>Rumbo: '+ this.rumbo +' grados</li>'; 
         datos += '<li>Velocidad: '+ this.velocidad +' metros/segundo</li>';
         datos += '</ul>';
-        ubicacion.innerHTML = datos;
+        ubicacion.append(datos);
     }
 
 }
