@@ -8,7 +8,7 @@ class Moneda {
         this.apikey = "5859555379feb1d0967bd391c16a71eb";
         this.currencies = "&currencies=USD,EUR,JPY,GBP,AUD,CHF";
         this.format = "&format=1";
-        this.url = "http://api.currencylayer.com/live?access_key=" + this.apikey + this.currencies + this.format;
+        this.url = "https://api.currencylayer.com/live?access_key=" + this.apikey + this.currencies + this.format;
     }
 
     cargarCambio() {
