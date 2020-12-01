@@ -28,7 +28,7 @@ h1 + p {
   }
 
 /* a=0 b=0 c=1 -> Especificidad =   1 */
-h2 {
+h3 {
       color: #A7270B;
       font-variant: small-caps;
   }

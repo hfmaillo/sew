@@ -27,9 +27,9 @@ class File {
     mostrarArchivo(archivo) {
         var section = document.createElement("section");
 
-        var h2 = document.createElement("h2");
-        h2.innerHTML = archivo.name;
-        $(section).append(h2);
+        var h3 = document.createElement("h3");
+        h3.innerHTML = archivo.name;
+        $(section).append(h3);
 
         var stringPropiedades = "<ul><li>Tamaño: " + archivo.size + " bytes</li>";
             stringPropiedades += "<li>Tipo: " + archivo.type + "</li>";
