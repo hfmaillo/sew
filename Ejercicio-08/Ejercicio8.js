@@ -49,7 +49,9 @@ class Meteo {
                 $(article).append(stringDatos);
                 },
             error: function() {
-                $(h2).html("¡Tenemos problemas! No puedo obtener JSON de <a href='https://openweathermap.org'>OpenWeatherMap</a>");
+                var stringError = "<p>¡Tenemos problemas! No puedo obtener JSON de <a href='https://openweathermap.org'>OpenWeatherMap</a></p>"
+
+                $(article).append(stringError);
                 }
         });
     }
