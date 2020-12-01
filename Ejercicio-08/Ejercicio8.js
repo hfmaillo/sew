@@ -13,7 +13,7 @@ class Meteo {
 
     verJSON(ciudad){
         this.ciudad = ciudad;
-        this.url = "http://api.openweathermap.org/data/2.5/weather?q=" + this.ciudad + "," + this.codigoPais + this.unidades + this.idioma + "&APPID=" + this.apikey;
+        this.url = "https://api.openweathermap.org/data/2.5/weather?q=" + this.ciudad + "," + this.codigoPais + this.unidades + this.idioma + "&APPID=" + this.apikey;
 
         var article = document.createElement("article");
         $("footer").before(article);
@@ -51,7 +51,7 @@ class Meteo {
                 $(article).append(stringDatos);
                 },
             error: function() {
-                $(h2).html("¡Tenemos problemas! No puedo obtener JSON de <a href='http://openweathermap.org'>OpenWeatherMap</a>");
+                $(h2).html("¡Tenemos problemas! No puedo obtener JSON de <a href='https://openweathermap.org'>OpenWeatherMap</a>");
                 }
         });
     }
