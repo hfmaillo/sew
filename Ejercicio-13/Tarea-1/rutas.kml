@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<Placemark>
+<name>Ruta por el Norte de España</name>
+<description>Recorre la zona más verde del país, combinando paisajes montañosos y costeros con una profunda tradición gastronómica</description>
+<LineString>
+<extrude>1</extrude>
+<tessellate>1</tessellate>
+<coordinates>
+-1.9823194,43.3240428,0.0
+-3.0034327,43.2633022,0.0
+-3.470492,43.4453975,0.0
+-5.0001498,43.2720667,0.0
+-8.614638,42.8801837,0.0
+</coordinates>
+</LineString>
+
+<Style>
+<LineStyle>
+<color>#ff0000ff</color>
+<width>5</width>
+</LineStyle>
+</Style>
+</Placemark>
+
+<Placemark>
+<name>Un día perfecto en el Valle Alto del Lozoya</name>
+<description>Ruta cultural que discurre por los Bienes de Interés Cultural que existen a lo largo del recorrido</description>
+<LineString>
+<extrude>1</extrude>
+<tessellate>1</tessellate>
+<coordinates>
+-3.7025321,40.9615889,0.0
+-3.8123731,40.9555005,0.0
+-3.82906,40.9265096,0.0
+-3.8822321,40.903941,0.0
+</coordinates>
+</LineString>
+
+<Style>
+<LineStyle>
+<color>#ffff00ff</color>
+<width>5</width>
+</LineStyle>
+</Style>
+</Placemark>
+
+<Placemark>
+<name>Ibiza con tranquilidad</name>
+<description>Recorre una de las islas del archipiélago balear, como se hacía antes de la fiesta</description>
+<LineString>
+<extrude>1</extrude>
+<tessellate>1</tessellate>
+<coordinates>
+1.293481,38.9844378,0.0
+1.4336077,39.0834377,0.0
+1.5847014,39.0769556,0.0
+1.5006488,38.9865775,0.0
+1.3996735,38.9069078,0.0
+</coordinates>
+</LineString>
+
+<Style>
+<LineStyle>
+<color>#ff800080</color>
+<width>5</width>
+</LineStyle>
+</Style>
+</Placemark>
+
+</Document>
+</kml>
