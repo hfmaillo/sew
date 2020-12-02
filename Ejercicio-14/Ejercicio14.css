@@ -1,0 +1,51 @@
+/* MapaGeoJSON.css */
+/* Version 1.0. 24/11/2020. Hector Fernandez Maillo. Universidad de Oviedo */
+
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+body {
+      font: 1.1em "Trebuchet MS", sans-serif;
+      line-height: 1.9;
+      background-color:#fffbc8; 
+      text-align: justify;
+  }
+
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+h1 {
+      background-color: #A7270B; 
+      color: white;
+      text-transform: uppercase;  
+      text-align: center; 
+      padding: 1em 2em;
+      border: dashed black;
+      margin: 1em 1.5em;
+  }
+
+/* a=0 b=0 c=2 -> Especificidad =   2 */
+h1 + p {
+      font-weight: bold;
+      padding: 0em 3em;
+      text-align: center;
+  }
+
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+h3 {
+      color: #A7270B;
+      font-variant: small-caps;
+  }
+  
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+canvas {
+      width: 37.5em;
+      height: 21.25em;
+  }
+
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+footer {
+      margin-top: 2em;
+  }
+
+/* a=0 b=1 c=1 -> Especificidad =  11 */
+img[alt~="Válido!"] {
+      height: 3.6em;
+      width: 3.6em;
+  }
