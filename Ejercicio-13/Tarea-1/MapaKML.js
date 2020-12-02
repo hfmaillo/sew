@@ -14,12 +14,20 @@ class MapaKML {
     }
 
     cargarArchivo() {
-        var archivo = document.getElementById("subirArchivo").files[0];
+        var archivos = document.getElementById("subirArchivo").files;
 
-        var nombre = archivo.name.split(".");
-        if (nombre[nombre.length - 1] == "kml") {
-            this.crearMapa();
-            this.mostrarKML(archivo);
+        if (archivos.length > 0) {
+            var archivo = archivos[0];
+            var nombre = archivo.name.split(".");
+            
+            if (nombre[nombre.length - 1] == "kml") {
+                this.crearMapa();
+                this.mostrarKML(archivo);
+            } else {
+                $("div").html("");
+            }
+        } else {
+            $("div").html("");
         }
     }
 
