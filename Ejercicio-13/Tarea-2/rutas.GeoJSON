@@ -1,0 +1,97 @@
+﻿{
+   "type":"FeatureCollection",
+   "features":[
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Ruta por el Norte de España",
+            "description":"Recorre la zona más verde del país, combinando paisajes montañosos y costeros con una profunda tradición gastronómica"
+         },
+         "geometry":{
+            "type":"LineString",
+            "coordinates":[
+               [
+                  -1.9823194,
+                  43.3240428
+               ],
+               [
+                  -3.0034327,
+                  43.2633022
+               ],
+               [
+                  -3.470492,
+                  43.4453975
+               ],
+               [
+                  -5.0001498,
+                  43.2720667
+               ],
+               [
+                  -8.614638,
+                  42.8801837
+               ]
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Un día perfecto en el Valle Alto del Lozoya",
+            "description":"Ruta cultural que discurre por los Bienes de Interés Cultural que existen a lo largo del recorrido"
+         },
+         "geometry":{
+            "type":"LineString",
+            "coordinates":[
+               [
+                  -3.7025321,
+                  40.9615889
+               ],
+               [
+                  -3.8123731,
+                  40.9555005
+               ],
+               [
+                  -3.82906,
+                  40.9265096
+               ],
+               [
+                  -3.8822321,
+                  40.903941
+               ]
+            ]
+         }
+      },
+      {
+         "type":"Feature",
+         "properties":{
+            "name":"Ibiza con tranquilidad",
+            "description":"Recorre una de las islas del archipiélago balear, como se hacía antes de la fiesta"
+         },
+         "geometry":{
+            "type":"LineString",
+            "coordinates":[
+               [
+                  1.293481,
+                  38.9844378
+               ],
+               [
+                  1.4336077,
+                  39.0834377
+               ],
+               [
+                  1.5847014,
+                  39.0769556
+               ],
+               [
+                  1.5006488,
+                  38.9865775
+               ],
+               [
+                  1.3996735,
+                  38.9069078
+               ]
+            ]
+         }
+      }
+   ]
+}
