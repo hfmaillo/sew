@@ -1,4 +1,4 @@
-/* CalculadoraCientifica.css */
+/* CalculadoraRPN.css */
 /* Version 1.0. 01/12/2020. Hector Fernandez Maillo. Universidad de Oviedo */
 
 /* a=0 b=0 c=1 -> Especificidad =   1 */
@@ -29,13 +29,26 @@ form {
       width: 30%;
   }
 
+/* a=1 b=0 c=0 -> Especificidad = 100 */
+#pila {
+      color: rgb(84, 84, 84);
+      background-color: rgba(239, 239, 239, 0.3);
+      font: 400 0.83333em Arial, sans-serif;
+      height: 6em;
+      border: 0.125em inset rgba(118, 118, 118, 0.3);
+      text-align: right;
+      overflow: auto;
+  }
+
+/* a=1 b=0 c=0 -> Especificidad = 100 */
 /* a=0 b=0 c=1 -> Especificidad =   1 */
-input {
+#pila, input {
       padding: 0.7em;
   }
 
+/* a=1 b=0 c=0 -> Especificidad = 100 */
 /* a=0 b=1 c=1 -> Especificidad =  11 */
-input[type="text"] {
+#pila, input[type="text"] {
       grid-column-start: 1;
       grid-column-end: 6;
   }
