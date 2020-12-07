@@ -190,18 +190,16 @@
             // Interfaz con el usuario. En el interior de comillas dobles se deben usar comillas simples
             echo "
                 <form action='#' method='post' name='moneda'>
-                    <section>
-                        <h3 hidden>Moneda</h3>
+                    <div>
                         <input type='submit' name='seleccionarEUR' value='EUR' />
                         <input type='submit' name='seleccionarUSD' value='USD' />
                         <input type='submit' name='seleccionarJPY' value='JPY' />
                         <input type='submit' name='seleccionarGBP' value='GBP' />
                         <input type='submit' name='seleccionarAUD' value='AUD' />
                         <input type='submit' name='seleccionarCHF' value='CHF' />
-                    </section>
+                    </div>
 
-                    <section id='valor'>
-                        <h3 hidden>Valor</h3>
+                    <div id='valor'>
                         <input type='text' title='Pantalla' value='$valor' disabled />
 
                         <input type='submit' class='digito' name='digitos7' value='7' />
@@ -219,13 +217,12 @@
                         <input type='submit' class='digito' name='digitos0' value='0' />
                         <input type='submit' name='punto' value='.' />
                         <input type='submit' name='borrar' value='C' />
-                    </section>
+                    </div>
 
-                    <section>
-                        <h3 hidden>Conversión</h3>
+                    <div>
                         <input type='submit' name='convertir' value='Convertir' />
                         $conversion
-                    </section>
+                    </div>
                 </form>
             ";
         ?>

@@ -28,7 +28,7 @@ h1 + p {
   }
   
 /* a=0 b=0 c=1 -> Especificidad =   1 */
-section {
+div {
       text-align: center;
       padding: 0.7em;
   }
