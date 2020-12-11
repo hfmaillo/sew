@@ -46,7 +46,7 @@
                     return $this->pantalla;
                 }
 
-                private function appendPantalla($toAppend) {
+                protected function appendPantalla($toAppend) {
                     $_SESSION['pantalla'] = $this->pantalla .= $toAppend;
                 }
 
@@ -73,13 +73,9 @@
                 public function division() {
                     $this->appendPantalla("/");
                 }
-                
-                private function writePantalla($toWrite) {
-                    $_SESSION['pantalla'] = $this->pantalla = $toWrite;
-                }
 
                 public function mrc() {
-                    $this->writePantalla($this->memoria);
+                    $this->appendPantalla($this->memoria);
                 }
 
                 public function mMenos() {
@@ -99,7 +95,7 @@
                 }
 
                 public function borrar() {
-                    $this->writePantalla("");
+                    $_SESSION['pantalla'] = $this->pantalla = "";
                 }
 
                 public function igual() {
@@ -111,38 +107,40 @@
                     $_SESSION['pantalla'] = $this->pantalla;
                 }
 
+                public function pressBoton() {
+                    // Solo se ejecutará si se ha pulsado un botón
+                    if (count($_POST) > 0) {
+                        if(isset($_POST['mrc'])) $this->mrc();
+                        if(isset($_POST['mMenos'])) $this->mMenos();
+                        if(isset($_POST['mMas'])) $this->mMas();
+                        if(isset($_POST['division'])) $this->division();
+
+                        if(isset($_POST['digitos7'])) $this->digitos(7);
+                        if(isset($_POST['digitos8'])) $this->digitos(8);
+                        if(isset($_POST['digitos9'])) $this->digitos(9);
+                        if(isset($_POST['multiplicacion'])) $this->multiplicacion();
+
+                        if(isset($_POST['digitos4'])) $this->digitos(4);
+                        if(isset($_POST['digitos5'])) $this->digitos(5);
+                        if(isset($_POST['digitos6'])) $this->digitos(6);
+                        if(isset($_POST['resta'])) $this->resta();
+
+                        if(isset($_POST['digitos1'])) $this->digitos(1);
+                        if(isset($_POST['digitos2'])) $this->digitos(2);
+                        if(isset($_POST['digitos3'])) $this->digitos(3);
+                        if(isset($_POST['suma'])) $this->suma();
+
+                        if(isset($_POST['digitos0'])) $this->digitos(0);
+                        if(isset($_POST['punto'])) $this->punto();
+                        if(isset($_POST['borrar'])) $this->borrar();
+                        if(isset($_POST['igual'])) $this->igual();
+                    }
+                }
+
             }
 
             $calculadora = new CalculadoraBasica();
-
-            // Solo se ejecutará si se ha pulsado un botón
-            if (count($_POST) > 0) {
-                if(isset($_POST['mrc'])) $calculadora->mrc();
-                if(isset($_POST['mMenos'])) $calculadora->mMenos();
-                if(isset($_POST['mMas'])) $calculadora->mMas();
-                if(isset($_POST['division'])) $calculadora->division();
-
-                if(isset($_POST['digitos7'])) $calculadora->digitos(7);
-                if(isset($_POST['digitos8'])) $calculadora->digitos(8);
-                if(isset($_POST['digitos9'])) $calculadora->digitos(9);
-                if(isset($_POST['multiplicacion'])) $calculadora->multiplicacion();
-
-                if(isset($_POST['digitos4'])) $calculadora->digitos(4);
-                if(isset($_POST['digitos5'])) $calculadora->digitos(5);
-                if(isset($_POST['digitos6'])) $calculadora->digitos(6);
-                if(isset($_POST['resta'])) $calculadora->resta();
-
-                if(isset($_POST['digitos1'])) $calculadora->digitos(1);
-                if(isset($_POST['digitos2'])) $calculadora->digitos(2);
-                if(isset($_POST['digitos3'])) $calculadora->digitos(3);
-                if(isset($_POST['suma'])) $calculadora->suma();
-
-                if(isset($_POST['digitos0'])) $calculadora->digitos(0);
-                if(isset($_POST['punto'])) $calculadora->punto();
-                if(isset($_POST['borrar'])) $calculadora->borrar();
-                if(isset($_POST['igual'])) $calculadora->igual();
-            }
-
+            $calculadora->pressBoton();
             $pantalla = $calculadora->getPantalla();
 
             // Interfaz con el usuario. En el interior de comillas dobles se deben usar comillas simples

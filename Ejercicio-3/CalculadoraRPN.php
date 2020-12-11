@@ -137,10 +137,8 @@
 
                 public function enter() {
                     $valor = floatval($this->pantalla);
-                    if ($valor != 0) {
-                        $this->borrar();
-                        $this->pila->apilar($valor);
-                    }
+                    $this->borrar();
+                    $this->pila->apilar($valor);
                 }
 
                 public function pi() {
@@ -200,49 +198,51 @@
                     $_SESSION['pantalla'] = $this->pantalla;
                 }
 
+                public function pressBoton() {
+                    // Solo se ejecutará si se ha pulsado un botón
+                    if (count($_POST) > 0) {
+                        if(isset($_POST['pi'])) $this->pi();
+                        if(isset($_POST['seno'])) $this->seno();
+                        if(isset($_POST['coseno'])) $this->coseno();
+                        if(isset($_POST['tangente'])) $this->tangente();
+                        if(isset($_POST['e'])) $this->e();
+
+                        if(isset($_POST['raiz'])) $this->raiz();
+                        if(isset($_POST['arcoseno'])) $this->arcoseno();
+                        if(isset($_POST['arcocoseno'])) $this->arcocoseno();
+                        if(isset($_POST['arcotangente'])) $this->arcotangente();
+                        if(isset($_POST['division'])) $this->division();
+
+                        if(isset($_POST['potencia'])) $this->potencia();
+                        if(isset($_POST['digitos7'])) $this->digitos(7);
+                        if(isset($_POST['digitos8'])) $this->digitos(8);
+                        if(isset($_POST['digitos9'])) $this->digitos(9);
+                        if(isset($_POST['multiplicacion'])) $this->multiplicacion();
+
+                        if(isset($_POST['logaritmo'])) $this->logaritmo();
+                        if(isset($_POST['digitos4'])) $this->digitos(4);
+                        if(isset($_POST['digitos5'])) $this->digitos(5);
+                        if(isset($_POST['digitos6'])) $this->digitos(6);
+                        if(isset($_POST['resta'])) $this->resta();
+
+                        if(isset($_POST['lNatural'])) $this->lNatural();
+                        if(isset($_POST['digitos1'])) $this->digitos(1);
+                        if(isset($_POST['digitos2'])) $this->digitos(2);
+                        if(isset($_POST['digitos3'])) $this->digitos(3);
+                        if(isset($_POST['suma'])) $this->suma();
+
+                        if(isset($_POST['masMenos'])) $this->masMenos();
+                        if(isset($_POST['digitos0'])) $this->digitos(0);
+                        if(isset($_POST['punto'])) $this->punto();
+                        if(isset($_POST['borrar'])) $this->borrar();
+                        if(isset($_POST['enter'])) $this->enter();
+                    }
+                }
+
             }
 
             $calculadora = new CalculadoraRPN();
-
-            // Solo se ejecutará si se ha pulsado un botón
-            if (count($_POST) > 0) {
-                if(isset($_POST['pi'])) $calculadora->pi();
-                if(isset($_POST['seno'])) $calculadora->seno();
-                if(isset($_POST['coseno'])) $calculadora->coseno();
-                if(isset($_POST['tangente'])) $calculadora->tangente();
-                if(isset($_POST['e'])) $calculadora->e();
-
-                if(isset($_POST['raiz'])) $calculadora->raiz();
-                if(isset($_POST['arcoseno'])) $calculadora->arcoseno();
-                if(isset($_POST['arcocoseno'])) $calculadora->arcocoseno();
-                if(isset($_POST['arcotangente'])) $calculadora->arcotangente();
-                if(isset($_POST['division'])) $calculadora->division();
-
-                if(isset($_POST['potencia'])) $calculadora->potencia();
-                if(isset($_POST['digitos7'])) $calculadora->digitos(7);
-                if(isset($_POST['digitos8'])) $calculadora->digitos(8);
-                if(isset($_POST['digitos9'])) $calculadora->digitos(9);
-                if(isset($_POST['multiplicacion'])) $calculadora->multiplicacion();
-
-                if(isset($_POST['logaritmo'])) $calculadora->logaritmo();
-                if(isset($_POST['digitos4'])) $calculadora->digitos(4);
-                if(isset($_POST['digitos5'])) $calculadora->digitos(5);
-                if(isset($_POST['digitos6'])) $calculadora->digitos(6);
-                if(isset($_POST['resta'])) $calculadora->resta();
-
-                if(isset($_POST['lNatural'])) $calculadora->lNatural();
-                if(isset($_POST['digitos1'])) $calculadora->digitos(1);
-                if(isset($_POST['digitos2'])) $calculadora->digitos(2);
-                if(isset($_POST['digitos3'])) $calculadora->digitos(3);
-                if(isset($_POST['suma'])) $calculadora->suma();
-
-                if(isset($_POST['masMenos'])) $calculadora->masMenos();
-                if(isset($_POST['digitos0'])) $calculadora->digitos(0);
-                if(isset($_POST['punto'])) $calculadora->punto();
-                if(isset($_POST['borrar'])) $calculadora->borrar();
-                if(isset($_POST['enter'])) $calculadora->enter();
-            }
-
+            $calculadora->pressBoton();
             $pantalla = $calculadora->getPantalla();
             $pila = $calculadora->getPila()->mostrar();
 

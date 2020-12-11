@@ -60,7 +60,7 @@
                     return $this->valor;
                 }
 
-                public function cargarCambio($url) {
+                private function cargarCambio($url) {
                     if (!isset($_SESSION['json'])) {
                         // Se solicita el archivo JSON de la url que se pasa como parámetro y se recibe como un string
                         $datos = file_get_contents($url);
@@ -152,39 +152,42 @@
                     }
                 }
 
+                public function pressBoton() {
+                    $conversion = "";
+                    // Solo se ejecutará si se ha pulsado un botón
+                    if (count($_POST) > 0) {
+                        if(isset($_POST['seleccionarEUR'])) $this->seleccionar("EUR");
+                        if(isset($_POST['seleccionarUSD'])) $this->seleccionar("USD");
+                        if(isset($_POST['seleccionarJPY'])) $this->seleccionar("JPY");
+                        if(isset($_POST['seleccionarGBP'])) $this->seleccionar("GBP");
+                        if(isset($_POST['seleccionarAUD'])) $this->seleccionar("AUD");
+                        if(isset($_POST['seleccionarCHF'])) $this->seleccionar("CHF");
+
+                        if(isset($_POST['digitos7'])) $this->digitos(7);
+                        if(isset($_POST['digitos8'])) $this->digitos(8);
+                        if(isset($_POST['digitos9'])) $this->digitos(9);
+
+                        if(isset($_POST['digitos4'])) $this->digitos(4);
+                        if(isset($_POST['digitos5'])) $this->digitos(5);
+                        if(isset($_POST['digitos6'])) $this->digitos(6);
+
+                        if(isset($_POST['digitos1'])) $this->digitos(1);
+                        if(isset($_POST['digitos2'])) $this->digitos(2);
+                        if(isset($_POST['digitos3'])) $this->digitos(3);
+
+                        if(isset($_POST['digitos0'])) $this->digitos(0);
+                        if(isset($_POST['punto'])) $this->punto();
+                        if(isset($_POST['borrar'])) $this->borrar();
+
+                        if(isset($_POST['convertir'])) $conversion = $this->convertir();
+                    }
+                    return $conversion;
+                }
+
             }
 
             $moneda = new Moneda();
-            $conversion = "";
-
-            // Solo se ejecutará si se ha pulsado un botón
-            if (count($_POST) > 0) {
-                if(isset($_POST['seleccionarEUR'])) $moneda->seleccionar("EUR");
-                if(isset($_POST['seleccionarUSD'])) $moneda->seleccionar("USD");
-                if(isset($_POST['seleccionarJPY'])) $moneda->seleccionar("JPY");
-                if(isset($_POST['seleccionarGBP'])) $moneda->seleccionar("GBP");
-                if(isset($_POST['seleccionarAUD'])) $moneda->seleccionar("AUD");
-                if(isset($_POST['seleccionarCHF'])) $moneda->seleccionar("CHF");
-
-                if(isset($_POST['digitos7'])) $moneda->digitos(7);
-                if(isset($_POST['digitos8'])) $moneda->digitos(8);
-                if(isset($_POST['digitos9'])) $moneda->digitos(9);
-
-                if(isset($_POST['digitos4'])) $moneda->digitos(4);
-                if(isset($_POST['digitos5'])) $moneda->digitos(5);
-                if(isset($_POST['digitos6'])) $moneda->digitos(6);
-
-                if(isset($_POST['digitos1'])) $moneda->digitos(1);
-                if(isset($_POST['digitos2'])) $moneda->digitos(2);
-                if(isset($_POST['digitos3'])) $moneda->digitos(3);
-
-                if(isset($_POST['digitos0'])) $moneda->digitos(0);
-                if(isset($_POST['punto'])) $moneda->punto();
-                if(isset($_POST['borrar'])) $moneda->borrar();
-
-                if(isset($_POST['convertir'])) $conversion = $moneda->convertir();
-            }
-            
+            $conversion = $moneda->pressBoton(); 
             $valor = $moneda->getValor();
 
             // Interfaz con el usuario. En el interior de comillas dobles se deben usar comillas simples
