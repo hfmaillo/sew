@@ -60,8 +60,8 @@ table, th, td {
 
 /* a=0 b=0 c=1 -> Especificidad =   1 */
 table {
-      max-width: 100%;
-      height: auto;
+      display: block;
+      overflow-x: auto;
   }
 
 /* a=0 b=0 c=1 -> Especificidad =   1 */
