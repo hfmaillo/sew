@@ -584,6 +584,7 @@
             <form action='#' method='post' name='baseDatos' enctype='multipart/form-data'>
                 <nav>
                     <h2>Menú</h2>
+                    <p hidden>Menú</p>
                     <input type='submit' name='crearBaseDatos' value='Crear base datos' />
                     <input type='submit' name='crearTabla' value='Crear tabla' />
                     <input type='submit' name='insertarDatos' value='Insertar datos' />
