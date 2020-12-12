@@ -479,7 +479,7 @@
             public function cargar() {
                 echo "<h2>Cargar Archivo</h2>";
                 echo "<p>Archivo de texto en formato CSV a cargar desde la máquina cliente.</p>";
-                echo "<input type='file' name='archivo' />";
+                echo "<input type='file' title='Archivo' name='archivo' />";
                 echo "<input type='submit' name='cargar' value='Cargar' />";
             }
 
