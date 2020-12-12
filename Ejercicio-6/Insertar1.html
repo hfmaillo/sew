@@ -31,13 +31,12 @@
 
                 <section>
         <h2>Insertar Datos</h2><p>Formulario para insertar datos en la tabla 'PruebasUsabilidad' que pertenece a la base de datos 'sew'.</p><p>DNI: <input type="text" title="DNI" name="dni" placeholder="12345678A" pattern="[0-9]{8}[A-Z]{1}" value="" required=""></p><p>Nombre: <input type="text" title="Nombre" name="nombre" value="" required=""></p><p>Apellidos: <input type="text" title="Apellidos" name="apellidos" value="" required=""></p><p>E-mail: <input type="email" title="E-mail" name="email" placeholder="ejemplo@dominio.com" value="" required=""></p><p>Teléfono: <input type="tel" title="Teléfono" name="telefono" placeholder="123456789" pattern="[0-9]{9}" value="" required=""></p><p>Edad: <input type="number" title="Edad" name="edad" min="0" max="100" value="" required=""></p>
-                    <section>
-                        <h3 hidden="">Sexo:</h3>
-                        <p>Sexo:</p>
+                    <fieldset>
+                        <legend>Sexo:</legend>
                         <p><input type="radio" title="Femenino" name="sexo" id="femenino" value="Femenino">Femenino</p> 
                         <p><input type="radio" title="Masculino" name="sexo" id="masculino" value="Masculino">Masculino</p> 
                         <p><input type="radio" title="Otro" name="sexo" id="otro" value="Otro">Otro</p>
-                    </section>
+                    </fieldset>
                 <p>Pericia Informática (0-10): <input type="number" title="Pericia Informática" name="periciaInformatica" min="0" max="10" value="" required=""></p><p>Tiempo Empleado (s): <input type="number" title="Tiempo Empleado" name="tiempoEmpleado" min="0" value="" required=""></p><p><input type="checkbox" title="Tarea Correcta" name="tareaCorrecta">Tarea Correcta</p><p>Comentarios: <textarea title="Comentarios" name="comentarios" rows="5" cols="50"></textarea></p><p>Propuestas: <textarea title="Propuestas" name="propuestas" rows="5" cols="50"></textarea></p><p>Valoración (0-10): <input type="number" title="Valoración" name="valoracion" min="0" max="10" value="" required=""></p><input type="submit" name="insertar" value="Insertar">
                 </section>
             </form>
