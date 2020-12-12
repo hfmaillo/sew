@@ -1,0 +1,89 @@
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+header {
+     grid-area: header;
+  }
+
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+nav {
+      grid-area: menu;
+  }
+
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+article, section {
+      grid-area: main;
+  }
+
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+footer {
+      grid-area: footer;
+  }
+
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+body {
+      font: 1.1em "Trebuchet MS", sans-serif;
+      line-height: 1.9;
+      background-color:#fffbc8; 
+      text-align: justify;
+      display: grid;
+      grid-template-columns: 13em auto;
+      grid-column-gap: 5em;
+      grid-template-areas: 
+        'header header'
+        'menu main'
+        'footer footer';
+  }
+
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+h1 {
+      background-color: #A7270B; 
+      color: white;
+      text-transform: uppercase;  
+      text-align: center; 
+      padding: 1em 2em;
+      border: dashed black;
+      margin: 1em 1.5em;
+  }
+
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+h2 {
+      font-variant: small-caps;
+      color: #A7270B;
+  }
+
+/* a=0 b=0 c=2 -> Especificidad =   2 */
+h1 + p {
+      font-weight: bold;
+      padding: 0em 3em;
+  }
+
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+ul {
+      list-style: circle outside;
+  }
+
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+footer {
+      margin-top: 2em;
+  }
+
+/* a=0 b=1 c=1 -> Especificidad =  11 */
+img[alt~="CSS"] {
+      height: 3.6em;
+      width: 3.6em;
+  }
+
+/* a=0 b=1 c=1 -> Especificidad =  11 */
+a:link { 
+      color: blue;
+  }
+
+/* a=0 b=1 c=1 -> Especificidad =  11 */
+a:visited { 
+      color: purple;
+  }
+
+/* a=0 b=1 c=1 -> Especificidad =  11 */
+a:active { 
+      color: darkred;
+  }
