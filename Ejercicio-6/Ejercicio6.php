@@ -111,27 +111,27 @@
                 if ($dni != "'") {
                     $dni .= " readonly";
                 }
-                echo "<p>DNI: <input type='text' name='dni' placeholder='12345678A' pattern='[0-9]{8}[A-Z]{1}' value='$dni required /></p>";
+                echo "<p>DNI: <input type='text' title='DNI' name='dni' placeholder='12345678A' pattern='[0-9]{8}[A-Z]{1}' value='$dni required /></p>";
             }
 
             private function campoNombre($nombre = "") {
-                echo "<p>Nombre: <input type='text' name='nombre' value='$nombre' required /></p>";
+                echo "<p>Nombre: <input type='text' title='Nombre' name='nombre' value='$nombre' required /></p>";
             }
 
             private function campoApellidos($apellidos = "") {
-                echo "<p>Apellidos: <input type='text' name='apellidos' value='$apellidos' required /></p>";
+                echo "<p>Apellidos: <input type='text' title='Apellidos' name='apellidos' value='$apellidos' required /></p>";
             }
 
             private function campoEmail($email = "") {
-                echo "<p>E-mail: <input type='email' name='email' placeholder='ejemplo@dominio.com' value='$email' required /></p>";
+                echo "<p>E-mail: <input type='email' title='E-mail' name='email' placeholder='ejemplo@dominio.com' value='$email' required /></p>";
             }
 
             private function campoTelefono($telefono = "") {
-                echo "<p>Teléfono: <input type='tel' name='telefono' placeholder='123456789' pattern='[0-9]{9}' value='$telefono' required /></p>";
+                echo "<p>Teléfono: <input type='tel' title='Teléfono' name='telefono' placeholder='123456789' pattern='[0-9]{9}' value='$telefono' required /></p>";
             }
 
             private function campoEdad($edad = "") {
-                echo "<p>Edad: <input type='number' name='edad' min='0' max='100' value='$edad' required /></p>";
+                echo "<p>Edad: <input type='number' title='Edad' name='edad' min='0' max='100' value='$edad' required /></p>";
             }
 
             private function campoSexo($sexo = "") {
@@ -139,36 +139,38 @@
                 $mChecked = ($sexo == 'Masculino') ? 'checked' : '';
                 $oChecked = ($sexo == 'Otro') ? 'checked' : '';
                 echo "
-                    <p>Sexo:</p>
-                    <p><input type='radio' name='sexo' id='femenino' value='Femenino' " .$fChecked. " />Femenino</p> 
-                    <p><input type='radio' name='sexo' id='masculino' value='Masculino' " .$mChecked. " />Masculino</p> 
-                    <p><input type='radio' name='sexo' id='otro' value='Otro' " .$oChecked. " />Otro</p>
+                    <fieldset>
+                        <legend>Sexo:</legend>
+                        <p><input type='radio' title='Femenino' name='sexo' id='femenino' value='Femenino' " .$fChecked. " />Femenino</p> 
+                        <p><input type='radio' title='Masculino' name='sexo' id='masculino' value='Masculino' " .$mChecked. " />Masculino</p> 
+                        <p><input type='radio' title='Otro' name='sexo' id='otro' value='Otro' " .$oChecked. " />Otro</p>
+                    </fieldset>
                 ";
             }
 
             private function campoPericiaInformatica($periciaInformatica = "") {
-                echo "<p>Pericia Informática (0-10): <input type='number' name='periciaInformatica' min='0' max='10' value='$periciaInformatica' required /></p>";
+                echo "<p>Pericia Informática (0-10): <input type='number' title='Pericia Informática' name='periciaInformatica' min='0' max='10' value='$periciaInformatica' required /></p>";
             }
 
             private function campoTiempoEmpleado($tiempoEmpleado = "") {
-                echo "<p>Tiempo Empleado (s): <input type='number' name='tiempoEmpleado' min='0' value='$tiempoEmpleado' required /></p>";
+                echo "<p>Tiempo Empleado (s): <input type='number' title='Tiempo Empleado' name='tiempoEmpleado' min='0' value='$tiempoEmpleado' required /></p>";
             }
 
             private function campoTareaCorrecta($tareaCorrecta = "") {
                 $checked = ($tareaCorrecta == '1') ? 'checked' : '';
-                echo "<p><input type='checkbox' name='tareaCorrecta' " .$checked. " />Tarea Correcta</p>";
+                echo "<p><input type='checkbox' title='Tarea Correcta' name='tareaCorrecta' " .$checked. " />Tarea Correcta</p>";
             }
 
             private function campoComentarios($comentarios = "") {
-                echo "<p>Comentarios: <textarea name='comentarios' rows='5' cols='50'>$comentarios</textarea></p>";
+                echo "<p>Comentarios: <textarea title='Comentarios' name='comentarios' rows='5' cols='50'>$comentarios</textarea></p>";
             }
 
             private function campoPropuestas($propuestas = "") {
-                echo "<p>Propuestas: <textarea name='propuestas' rows='5' cols='50'>$propuestas</textarea></p>";
+                echo "<p>Propuestas: <textarea title='Propuestas' name='propuestas' rows='5' cols='50'>$propuestas</textarea></p>";
             }
 
             private function campoValoracion($valoracion = "") {
-                echo "<p>Valoración (0-10): <input type='number' name='valoracion' min='0' max='10' value='$valoracion' required /></p>";
+                echo "<p>Valoración (0-10): <input type='number' title='Valoración' name='valoracion' min='0' max='10' value='$valoracion' required /></p>";
             }
 
             private function insertarDatos($db) {
