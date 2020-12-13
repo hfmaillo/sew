@@ -121,7 +121,8 @@
             private function campoTarifaTipo($db) {
                 echo "
                     <p>Tipo Tarifa: 
-                        <select name='tarifaTipo'>
+                        <label for='tarifaTipo' hidden>Tipo Tarifa:</label>
+                        <select id='tarifaTipo' name='tarifaTipo'>
                 ";
                 // Consultar la tabla 'tarifa'
                 $resultado = $db->query("SELECT * FROM tarifa");
@@ -139,7 +140,8 @@
             private function campoLineaNumero($db) {
                 echo "
                     <p>Número Línea: 
-                        <select name='lineaNumero'>
+                        <label for='lineaNumero' hidden>Número Línea:</label>
+                        <select id='lineaNumero' name='lineaNumero'>
                 ";
                 // Consultar la tabla 'linea'
                 $resultado = $db->query("SELECT * FROM linea");
