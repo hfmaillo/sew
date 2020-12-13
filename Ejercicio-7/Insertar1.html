@@ -30,7 +30,8 @@
                 <section>
         <h2>Insertar Datos</h2><h3>Conexión establecida con localhost via TCP/IP</h3><p>Formulario para insertar datos en la tabla 'viaje' que pertenece a la base de datos 'sew'.</p><p>Fecha: <input type="date" title="Fecha" name="fecha" max="2020-12-13" required=""></p><p>Hora: <input type="time" title="Hora" name="hora" required=""></p>
                     <p>Tipo Tarifa: 
-                        <select name="tarifaTipo">
+                        <label for="tarifaTipo" hidden="">Tipo Tarifa:</label>
+                        <select id="tarifaTipo" name="tarifaTipo">
                 
                             <option value="Billete ordinario">Billete ordinario (1.25 €)</option>
                     
@@ -46,7 +47,8 @@
                     </p>
                 
                     <p>Número Línea: 
-                        <select name="lineaNumero">
+                        <label for="lineaNumero" hidden="">Número Línea:</label>
+                        <select id="lineaNumero" name="lineaNumero">
                 
                             <option value="L1">L1 (El Cerillero - Hospital de Cabueñes)</option>
                     
