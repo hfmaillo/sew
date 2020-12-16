@@ -1,0 +1,99 @@
+/* Ejercicio6.css */
+/* Version 1.0. 15/12/2020. Hector Fernandez Maillo. Universidad de Oviedo */
+
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+body {
+      font: 1.1em "Trebuchet MS", sans-serif;
+      line-height: 1.9;
+      background-color:#fffbc8; 
+      text-align: justify;
+  }
+
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+h1 {
+      background-color: #A7270B; 
+      color: white;
+      text-transform: uppercase;
+      text-align: center; 
+      padding: 1em 2em;
+      border: dashed black;
+      margin: 1em 1.5em;
+  }
+
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+h2, h3 {
+      color: #A7270B;
+  }
+
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+h2 {
+      font-variant: small-caps;
+  }
+  
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+form {
+      display: grid;
+      grid-template-columns: 13em auto;
+      grid-column-gap: 5em;
+  }
+
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+input {
+      padding: 0.7em;
+      margin: 0.3em 3em 0.3em 0;
+      width: 13em;
+  }
+
+/* a=0 b=1 c=1 -> Especificidad =  11 */
+input[type="file"] {
+      display: block;
+      width: 27em;
+  }
+
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+table, th, td {
+      padding: 0.4em;
+  }
+
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+table {
+      width: 100%;
+  }
+
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+th {
+      text-align: center;
+  }
+
+/* a=0 b=1 c=2 -> Especificidad =  12 */
+tr:nth-child(odd) {
+      background-color: #A7270B;
+      color: white;
+  }
+
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+footer {
+      margin-top: 2em;
+  }
+
+/* a=0 b=1 c=1 -> Especificidad =  11 */
+img[alt~="Válido!"] {
+      height: 3.6em;
+      width: 3.6em;
+  }
+
+@media screen and (max-width: 600px) {
+    /* a=0 b=0 c=1 -> Especificidad =   1 */
+    th {
+          display: none;
+      }
+
+    /* a=0 b=0 c=1 -> Especificidad =   1 */
+    td {
+          display: block;
+          text-align: center;
+      }
+}
