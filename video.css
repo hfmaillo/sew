@@ -1,0 +1,7 @@
+/* a=0 b=0 c=1 -> Especificidad =   1 */
+video {
+      width: 27.3em;
+      height: 20.5em;
+      display: block;
+      margin: auto;
+  }
