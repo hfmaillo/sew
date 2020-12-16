@@ -1,0 +1,5 @@
+dni,nombre,apellidos,email,telefono,edad,sexo,periciaInformatica,tiempoEmpleado,tareaCorrecta,comentarios,propuestas,valoracion
+12345678Y,Lucía,"Fernández García",lucia@gmail.es,123456789,19,Femenino,7,1850,Sí,"No queda claro cómo empezar a usar la aplicación","Poner indicaciones para el primer uso",5
+85654123T,María,"González Viña",UO123456@uniovi.es,985475124,48,Otro,5,3120,No,"Falta una guía inicial","Crear un tutorial para usuarios novatos",6
+98428541Z,Luis,"Vilas Maillo",luis@hotmail.com,666222333,15,Masculino,9,875,Sí,Ninguno,Ninguna,10
+58428541Z,Héctor,"Pérez de la Roz",hector@uniovi.es,698547512,25,Masculino,9,1200,Sí,Ninguno,Ninguna,8
