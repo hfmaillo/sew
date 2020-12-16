@@ -55,7 +55,7 @@ article {
 
 /* a=0 b=1 c=1 -> Especificidad =  11 */
 input[onclick*="digitos"] {
-      background-color: #7c7c7c;
+      background-color: #ffffff;
       color: white;
   }
 
